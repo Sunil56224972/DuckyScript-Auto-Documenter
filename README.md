@@ -1,4 +1,4 @@
-# 🛡️ Enterprise DuckyScript Auto-Documenter
+# 🛡️DuckyScript Auto-Documenter
 
 **Enterprise DuckyDoc** is a professional tool that transforms raw **DuckyScript** into audit-ready PDF documentation. It automates security reporting for auditors and red-teamers by providing real-time parsing, a centralized report vault, and high-fidelity visual audit trails.
 
@@ -29,18 +29,22 @@ The goal of this project is to provide a seamless, enterprise-grade interface fo
 
 ### 📊 Professional Dashboard
 The core interface featuring the dual-pane editor and documentation preview.
+
 ![Dashboard](screenshots/dashboard.png)
 
 ### 📂 Report Management
 Organize and store your documented payloads in a structured, searchable vault.
+
 ![Reports](screenshots/reports.png)
 
 ### 📚 Template Library
 Access a collection of high-impact security scripts with one click.
+
 ![Templates](screenshots/templates.png)
 
 ### ⚙️ Customizable Settings
 Configure global documentation parameters like default delays and report headers.
+
 ![Settings](screenshots/settings.png)
 
 ## 🛠️ Tech Stack
