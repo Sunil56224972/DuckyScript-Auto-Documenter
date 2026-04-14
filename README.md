@@ -69,3 +69,6 @@ This tool is intended for professional security auditing and educational purpose
 
 ---
 **Developed with ❤️ by [Sunil](https://github.com/Sunil56224972)**
+
+### 🌐 Live Demo
+Explore the interactive dashboard here: **[ducky-script-auto-documenter.vercel.app](https://ducky-script-auto-documenter.vercel.app/)**
