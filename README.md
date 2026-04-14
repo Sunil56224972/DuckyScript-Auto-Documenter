@@ -1,6 +1,15 @@
 # 🛡️ Enterprise DuckyScript Auto-Documenter
 
-A high-fidelity, professional documentation suite designed for security auditors, red-teamers, and penetration testers. Transform raw DuckyScript into audit-ready PDF documentation instantly.
+**Enterprise DuckyDoc** is a professional tool that transforms raw **DuckyScript** into audit-ready PDF documentation. It automates security reporting for auditors and red-teamers by providing real-time parsing, a centralized report vault, and high-fidelity visual audit trails.
+
+### 🏷️ Project Topics
+- **Security Auditing** & Compliance
+- **DuckyScript** Automation
+- **Red Team** Tooling
+- **Automated Reporting**
+- **UX/UI for Security**
+
+---
 
 ![Dashboard Preview](screenshots/dashboard.png)
 
