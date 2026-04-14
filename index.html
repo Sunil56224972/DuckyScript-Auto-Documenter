@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise DuckyDoc | Professional DuckyScript Auto-Documenter</title>
+    <meta name="description" content="Translate DuckyScript into professional enterprise reports and flowcharts instantly.">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i data-lucide="shield-check" color="white" size="20"></i>
+                </div>
+                <h1 class="logo-text">Enterprise Doc</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-item active">
+                    <div class="icon-box icon-blue">
+                        <i data-lucide="layout-dashboard" size="18"></i>
+                    </div>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item">
+                    <div class="icon-box icon-purple">
+                        <i data-lucide="file-text" size="18"></i>
+                    </div>
+                    <span>My Reports</span>
+                </div>
+                <div class="nav-item">
+                    <div class="icon-box icon-amber">
+                        <i data-lucide="layers" size="18"></i>
+                    </div>
+                    <span>Templates</span>
+                </div>
+                <div class="nav-item">
+                    <div class="icon-box icon-slate">
+                        <i data-lucide="settings" size="18"></i>
+                    </div>
+                    <span>Settings</span>
+                </div>
+            </nav>
+
+            <div class="nav-menu" style="margin-top: auto;">
+                <div class="nav-item">
+                    <div class="icon-box icon-emerald">
+                        <i data-lucide="help-circle" size="18"></i>
+                    </div>
+                    <span>Documentation</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-dashboard">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i data-lucide="search" size="16" color="#94a3b8"></i>
+                    <input type="text" id="global-search" placeholder="Search payloads..." style="background:transparent; border:none; outline:none; font-size: 0.85rem; width: 100%;">
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center; position: relative;">
+                    <button class="btn-icon" id="notification-bell" style="position: relative;">
+                        <i data-lucide="bell" size="18"></i>
+                        <span id="notif-badge" class="badge-dot" style="display: none;"></span>
+                    </button>
+                    <!-- Notification Dropdown -->
+                    <div id="notif-dropdown" class="notification-dropdown">
+                        <div class="notif-header">Recent Activity</div>
+                        <div id="notif-items">
+                            <div class="notif-empty">No recent notifications</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <input type="text" id="project-name" placeholder="Project Name (e.g., Payload Alpha)" class="input-field" style="max-width: 250px; margin: 0;">
+                        <button class="btn btn-primary" id="export-btn">
+                            <i data-lucide="download" size="16"></i>
+                            Export Report
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Dashboard View -->
+                <section id="view-dashboard" class="view active">
+                    <!-- Left: Input -->
+                    <section class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">DuckyScript Input</h2>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button class="btn-icon" title="Clear" id="btn-clear"><i data-lucide="trash-2" size="16"></i></button>
+                                <button class="btn-icon" title="Copy" id="btn-copy"><i data-lucide="copy" size="16"></i></button>
+                            </div>
+                        </div>
+                        <div class="editor-container">
+                            <textarea id="script-input" spellcheck="false" placeholder="REM Example Script
+GUI r
+DELAY 500
+STRING notepad
+ENTER
+DELAY 500
+STRING Hello, this is an enterprise report test."></textarea>
+                        </div>
+                    </section>
+
+                    <!-- Right: Visualization -->
+                    <div id="report-view" class="report-view-container">
+                        <div class="report-preview-header">
+                            <h1 id="preview-title" style="font-size: 1.5rem; color: var(--slate-900); margin-bottom: 0.5rem; padding:0; margin:0">Keystroke Payload Documentation</h1>
+                            <div style="display: flex; gap: 1rem; margin-top: 0.75rem;">
+                                <span class="badge" id="preview-time" style="background: var(--slate-100); color: var(--slate-600);">Est. Time: 0s</span>
+                                <span class="badge" id="preview-complexity" style="background: var(--slate-100); color: var(--slate-600);">0 Commands</span>
+                            </div>
+                        </div>
+                        <div id="report-preview">
+                            <div style="text-align: center; color: var(--slate-400); margin-top: 4rem;">
+                                <i data-lucide="file-question" size="48" style="margin-bottom: 1rem; opacity: 0.5;"></i>
+                                <p>Start typing DuckyScript to generate documentation</p>
+                            </div>
+                        </div>
+                        <footer class="report-footer">
+                            <div class="watermark">Developed by Sunil</div>
+                        </footer>
+                    </div>
+                </section>
+
+                <!-- Reports View -->
+                <section id="view-reports" class="view">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-header">
+                            <h2 class="card-title">My Generated Reports</h2>
+                            <span class="badge" id="report-count">0 Reports</span>
+                        </div>
+                        <div id="reports-list" class="view-content" style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+                            <!-- Report cards injected here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Templates View -->
+                <section id="view-templates" class="view">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-header">
+                            <h2 class="card-title">Payload Templates Library</h2>
+                            <div class="filter-group">
+                                <button class="chip active">All</button>
+                                <button class="chip">Windows</button>
+                                <button class="chip">Linux</button>
+                            </div>
+                        </div>
+                        <div id="templates-list" class="view-content" style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                            <!-- Template cards injected here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings View -->
+                <section id="view-settings" class="view">
+                    <div class="card" style="height: 100%; max-width: 800px; margin: 0 auto;">
+                        <div class="card-header">
+                            <h2 class="card-title">System Settings</h2>
+                        </div>
+                        <div class="view-content" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 2rem;">
+                            <div class="settings-group">
+                                <h3>Configuration</h3>
+                                <div class="setting-item">
+                                    <label>Default Command Delay (ms)</label>
+                                    <input type="number" id="setting-delay" value="500" class="input-modern">
+                                </div>
+                                <div class="setting-item">
+                                    <label>Report Header Title</label>
+                                    <input type="text" id="setting-title" value="Keystroke Payload Documentation" class="input-modern">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="save-settings" style="width: fit-content; margin-top: 1rem;">
+                                <i data-lucide="save" size="16"></i> Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Registry -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Script Injection -->
+    <script type="module" src="./src/main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
